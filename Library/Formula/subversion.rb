@@ -156,6 +156,13 @@ class Subversion < Formula
     end
   end
 
+  def patches
+    if with_unicode_path?
+      # Patch that modify subversion paths handling to manage unicode paths issues
+      "http://gist.github.com/raw/434424/subversion-unicode-path.patch"
+    end
+  end
+
   def caveats
     s = ""
 
